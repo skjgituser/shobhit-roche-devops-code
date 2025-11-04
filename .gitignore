@@ -3,3 +3,4 @@ terraform.*
 .git
 .gitignore
 .terraform.lock.hcl
+myip.txt
