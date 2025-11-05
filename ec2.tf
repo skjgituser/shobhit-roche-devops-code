@@ -4,9 +4,10 @@ resource "aws_instance" "example" {
   #nstance_type = "t2.nano"
   instance_type = var.vm-size
   #key_name      = "roche-key"
-  key_name = var.ec2-key-name
+  key_name = aws_key_pair.example.key_name
   tags = {
     "Name" : var.vm-name
   }
+  
 
 }
