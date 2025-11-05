@@ -13,9 +13,15 @@ jobs:
   test-job:
     runs-on: ubuntu-latest 
     steps: # what exactly you want to run in ubuntu machine 
+    # calling first github action to clone my dryrun-aws data to runner machine 
+    - name: taking code from my repo 
+      uses: actions/checkout@v5
+      with:
+        ref: dryrun-aws 
+
     - name: my first step to test github action 
       run: |
         echo "Hello world"
         git version 
         whoami
-        ls -a 
+        ls -a  
