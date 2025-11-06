@@ -4,7 +4,7 @@ name: Shobhit terraform workflow
 # when there is a push happen in master branch pipeline gonna trigger
 on: 
   push:
-    branches: [ "dryrun-aws" ]  
+    branches: [ "main" ]  
     paths-ignore:
       - "README.md"
 
@@ -17,7 +17,7 @@ jobs:
     - name: taking code from my repo 
       uses: actions/checkout@v5
       with:
-        ref: dryrun-aws 
+        ref: main 
 # terrafor installing 
     - name: installing terraform 
       uses: hashicorp/setup-terraform@v3
