@@ -29,3 +29,15 @@ variable "key-size" {
     type = number
   
 }
+
+variable "my-vpc-id" {
+  
+}
+
+variable "my-sec-group-name" {
+  
+}
+
+variable "novm" {
+  
+}
