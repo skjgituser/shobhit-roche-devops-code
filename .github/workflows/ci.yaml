@@ -53,8 +53,9 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: shobhit-github-artifact
-        path: modules/ec2/ansible-inventory.txt
-              modules/ec2/shobhitKey.pem
+        path: |
+          modules/ec2/ansible-inventory.txt
+          modules/ec2/shobhitKey.pem
 
   infra-configure-job:
     needs: infra-provision-job
