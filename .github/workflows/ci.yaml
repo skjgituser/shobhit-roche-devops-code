@@ -85,3 +85,10 @@ jobs:
         sudo apt update
         sudo apt install ansible2 -y 
         ansible --version 
+
+    - name: running ansible playbook 
+      run: | 
+        echo "running ansible playbook"
+        chmod 400 shobhitKey.pem
+        cd shobhit-ansible
+        ansible-playbook -i ../ansible-inventory.txt --private-key ../shobhitKey.pem playbook1.yaml 

@@ -1,6 +1,6 @@
 ---
 - name: Defining target group
-  hosts: web-servers
+  hosts: shob-servers
   vars:
     x: httpd
     z: git
@@ -22,10 +22,11 @@
     - name: Copy Code to httpd appp server location
       copy: 
         src: myapps/index.html
-        dest: /var/www/html/shobhit.html
+        dest: /var/www/html/
     
     - name: starting {{ x }} service
       service:
         name: "{{ x }}"
         state: started
+        enabled: yes
 
