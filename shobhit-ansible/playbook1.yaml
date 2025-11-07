@@ -1,6 +1,7 @@
 ---
 - name: Defining Target Group
   hosts: shob-servers
+  become: true
   roles:
   - apache-webserver
 
