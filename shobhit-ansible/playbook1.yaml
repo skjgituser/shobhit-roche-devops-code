@@ -1,32 +1,44 @@
 ---
-- name: Defining target group
+- name: Defining Target Group
   hosts: shob-servers
-  vars:
-    x: httpd
-    z: git
-  become: true
-  tasks:
-    - name: Testing Ping Module
-      ping:
+  roles:
+  - apache-webserver
 
-    - name: Running Sample Commands
-      command: date
 
-    - name: Installing {{ x }} and "{{ z }}" software in target Amazon-linux Machine
-      yum:
-        name: 
-        - "{{ x }}"
-        - "{{ z }}"
-        state: present
 
-    - name: Copy Code to httpd appp server location
-      copy: 
-        src: myapps/index.html
-        dest: /var/www/html/
+
+
+
+
+# ---
+# - name: Defining target group
+#   hosts: shob-servers
+#   vars:
+#     x: httpd
+#     z: git
+#   become: true
+#   tasks:
+#     - name: Testing Ping Module
+#       ping:
+
+#     - name: Running Sample Commands
+#       command: date
+
+#     - name: Installing {{ x }} and "{{ z }}" software in target Amazon-linux Machine
+#       yum:
+#         name: 
+#         - "{{ x }}"
+#         - "{{ z }}"
+#         state: present
+
+#     - name: Copy Code to httpd appp server location
+#       copy: 
+#         src: myapps/index.html
+#         dest: /var/www/html/
     
-    - name: starting {{ x }} service
-      service:
-        name: "{{ x }}"
-        state: started
-        enabled: yes
+#     - name: starting {{ x }} service
+#       service:
+#         name: "{{ x }}"
+#         state: started
+#         enabled: yes
 

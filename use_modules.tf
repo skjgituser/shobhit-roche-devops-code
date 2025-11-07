@@ -21,7 +21,7 @@ terraform {
 module "my-shobhit-mudule-ec2" {
     source = "./modules/ec2"
     vm-name = "shobhit-vm-module-day4"
-    vm-size = "t2.nano"
+    vm-size = "t2.small"
     ec2-key-name = "shob-day3-key-by-module-day4"
     shob-ami-id = "ami-0a25a306450a2cba3"
     private-key-algo="RSA"
